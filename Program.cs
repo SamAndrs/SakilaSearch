@@ -1,10 +1,13 @@
-﻿namespace ActorMovie_lookup
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace ActorMovie_lookup
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            AppManager appManager = new AppManager();
+            appManager.Run();
         }
     }
 }
