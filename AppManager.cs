@@ -17,7 +17,7 @@ namespace ActorMovie_lookup
         public AppManager()
         {
             //dbsHandler = new AdoHandler(this);
-            _searchView = new SearchView(new AdoHandler(this), _startMenu);
+            _searchView = new SearchView(new AdoHandler(), _startMenu);
 
             _startMenu = new Menu();
             //_startMenu.PrintMenu();
