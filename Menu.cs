@@ -10,13 +10,18 @@ namespace ActorMovie_lookup
     {
         public void PrintMenu()
         {
+            Console.Clear();
             Console.WriteLine(
                new string('=', 15) +
                " WELCOME TO SAKILA DATABASE " +
-               new string('=', 25) + "\n\n"
-               + new string(' ', 25)
-               + "1). Search Actor by full name\n"
-               + new string(' ', 25)
+               new string('=', 15) + "\n\n"
+               + new string(' ', 15)
+               + "1). Search Actor by first name\n"
+                + new string(' ', 15)
+               + "2). Search Actor by last name\n"
+                + new string(' ', 15)
+               + "3). Search Actors by movie\n"
+               + new string(' ', 15)
                + "Q). Quit application.\n"
                );
 
@@ -32,7 +37,7 @@ namespace ActorMovie_lookup
                 value = Console.ReadLine();
                 if (string.IsNullOrEmpty(value))
                 {
-                    Console.WriteLine("Invalid input, try again.");
+                    Console.WriteLine(new string(' ', 15) + "Invalid input, try again.");
                     continue;
                 }
                 return value;

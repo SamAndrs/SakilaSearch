@@ -4,8 +4,11 @@ namespace ActorMovie_lookup
 {
     internal class Program
     {
+        
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+
             AppManager appManager = new AppManager();
             appManager.Run();
         }

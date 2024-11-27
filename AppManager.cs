@@ -16,12 +16,8 @@ namespace ActorMovie_lookup
 
         public AppManager()
         {
-            //dbsHandler = new AdoHandler(this);
-            _searchView = new SearchView(new AdoHandler(), _startMenu);
-
             _startMenu = new Menu();
-            //_startMenu.PrintMenu();
-
+            _searchView = new SearchView(new AdoHandler(), _startMenu);
         }
 
         public void Run()
@@ -30,22 +26,34 @@ namespace ActorMovie_lookup
             {
                 _startMenu.PrintMenu();
 
-                switch (_startMenu.ReadStringInput("-->").ToUpper())
+                switch (_startMenu.ReadStringInput(new string(' ', 15) + "-->").ToUpper())
                 {
                     case "1":
-                        _searchView.SearchActorMovies();
+                        Console.WriteLine();
+                        _searchView.SearchByFirstName();
+                        Console.ReadKey();
+                        break;
+
+                    case "2":
+                        Console.WriteLine();
+                        _searchView.SearchByLastName();
+                        Console.ReadKey();
+                        break;
+
+                    case "3":
+                        Console.WriteLine();
+                        _searchView.SearchActorsByMovie();
+                        Console.ReadKey();
                         break;
                     case "Q":
-                        Console.WriteLine("Exiting application.");
+                        Console.WriteLine(new string(' ', 15) + "Exiting application.");
+                        Console.ReadKey();
                         return;
                     default:
-                        Console.WriteLine("## ERROR ##: Invalid option. Try again");
+                        Console.WriteLine(new string(' ', 15) + "## ERROR ##: Invalid option. Try again");
                         break;
                 }
             }
-
-
-
         }// End Run()
     }
 }
